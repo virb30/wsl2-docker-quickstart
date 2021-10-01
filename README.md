@@ -203,7 +203,10 @@ Recomendamos que escolha a 1ª opção pelos seus benefícios, já que a maioria
 
 A instalação do Docker no WSL 2 é idêntica a instalação do Docker em sua própria distribuição Linux, portanto se você tem o Ubuntu é igual ao Ubuntu, se é Fedora é igual ao Fedora. A documentação de instalação do Docker no Linux por distribuição está [aqui](https://docs.docker.com/engine/install/), mas vamos ver como instalar no Ubuntu.
 
-
+> **Passos adicionais (Debian)**
+> touch /etc/fstab
+> update-alternatives --set iptables /usr/sbin/iptables-legacy
+> update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy 
 > **Quem está migrando de Docker Desktop para Docker Engine, temos duas opções**
 > 1. Desinstalar o Docker Desktop.
 > 2. Desativar o Docker Desktop Service nos serviços do Windows. Esta opção permite que você utilize o Docker Desktop, se necessário, para a maioria dos usuários a desinstalação do Docker Desktop é a mais recomendada.
@@ -220,7 +223,6 @@ A instalação do Docker no WSL 2 é idêntica a instalação do Docker em sua p
 > Após este procedimento, vá na sua IDE e para conectar ao Docker escolha a opção TCP Socket e coloque a URL `http://IP-DO-WSL:2375`. Seu IP do WSL pode ser encontrado com o comando `cat /etc/resolv.conf`.
 > 
 > Se caso não funcionar, reinicie o WSL com o comando `wsl --shutdown` e inicie o serviço do Docker novamente.
-
 
 Instale os pré-requisitos:
 
